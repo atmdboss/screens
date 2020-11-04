@@ -18,9 +18,20 @@ export default function App() {
             <Stack.Screen
               name="Home"
               component={AuthorScreen}
-              options={{ title: 'Authors' }}
+              options={{
+                title: 'Authors',
+                headerStyle: {
+                  backgroundColor: '#fff',
+                },
+              }}
             />
-            <Stack.Screen name="Posts" component={PostScreen} />
+            <Stack.Screen
+              name="Posts"
+              component={PostScreen}
+              options={({ route }) => ({
+                title: `${route.params.name}'s Posts`,
+              })}
+            />
           </Stack.Navigator>
         </Container>
       </NavigationContainer>

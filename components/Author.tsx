@@ -2,10 +2,11 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
 const Author: React.FC<{ author: Author }> = ({ author }) => {
+  const name = author.name.split(' ');
   return (
     <View style={styles.container}>
       <View style={styles.initials}>
-        <Text>JS</Text>
+        <Text>{`${name[0][0]}${name[1][0]}`}</Text>
       </View>
       <View style={styles.details}>
         <Text style={styles.name}>{author.name}</Text>
