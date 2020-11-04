@@ -20,4 +20,5 @@ interface Author {
     catchPhrase: string;
     bs: string;
   };
+  posts: Post[];
 }

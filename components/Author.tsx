@@ -12,7 +12,9 @@ const Author: React.FC<{ author: Author }> = ({ author }) => {
         <Text style={styles.email}>{author.email}</Text>
       </View>
       <View>
-        <Text style={styles.numPosts}>5 Posts ?</Text>
+        <Text style={styles.numPosts}>
+          {author.posts.length ? author.posts.length : 0} posts
+        </Text>
       </View>
     </View>
   );
@@ -20,7 +22,6 @@ const Author: React.FC<{ author: Author }> = ({ author }) => {
 
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: 'brown',
     flexDirection: 'row',
     alignItems: 'center',
     height: 72,
@@ -35,7 +36,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'teal',
   },
   details: {
-    // backgroundColor: 'yellow',
     flexGrow: 1,
     justifyContent: 'center',
     paddingLeft: 10,
